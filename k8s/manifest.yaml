@@ -17,7 +17,7 @@ spec:
       containers:
         - name: python-app-container
           image: bishesna/hello-world-app:latest
-          imagepullpolicy: always
+          imagePullPolicy: Always   # <-- Capital "A"
           ports:
             - containerPort: 7700
 
@@ -29,9 +29,9 @@ metadata:
 spec:
   selector:
     app: python-app
-  type: NodePort   # you can change to ClusterIP / LoadBalancer
+  type: NodePort
   ports:
     - protocol: TCP
       port: 7700
       targetPort: 7700
-      nodePort: 30077   # optional (NodePort range: 30000–32767)
+      nodePort: 30077
